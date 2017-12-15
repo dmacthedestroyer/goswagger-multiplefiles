@@ -1,0 +1,21 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Simple Multiple File Example
+paths:
+  /pets:
+    get:
+      responses:
+        "200":
+          description: A paged array of pets
+          schema:
+            $ref: '#/definitions/Pets'
+definitions:
+  Pets:
+    type: array
+    items:
+      $ref: 'pets.yml#/definitions/Pets'
+  Pet:
+    type: array
+    items:
+      $ref: 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/yaml/petstore-expanded.yaml#/definitions/Pet'

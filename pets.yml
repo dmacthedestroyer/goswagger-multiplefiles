@@ -1,0 +1,14 @@
+definitions:
+  Pets:
+    type: array
+    items:
+      $ref: 'pets.yml#/definitions/Pet'
+  Pet:
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      tag:
+        type: string
