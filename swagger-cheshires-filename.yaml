@@ -1,0 +1,26 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Simple Multiple File Example
+paths:
+  /cheshires:
+    get:
+      responses:
+        '200':
+          description: A paged array of cheshire cats
+          schema:
+            $ref: '#/definitions/CheshireCats'
+  /cheshire:
+    get:
+      responses:
+        '200':
+          description: Single cheshire cat
+          schema:
+            $ref: '#/definitions/CheshireCat'
+definitions:
+  CheshireCats:
+    type: array
+    items:
+      $ref: '#/definitions/CheshireCat'
+  CheshireCat:
+    $ref: cheshire_cat.yaml

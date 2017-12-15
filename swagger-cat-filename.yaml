@@ -1,0 +1,19 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Simple Multiple File Example
+paths:
+  /cats:
+    get:
+      responses:
+        "200":
+          description: A paged array of pets
+          schema:
+            $ref: '#/definitions/Cats'
+definitions:
+  Cats:
+    type: array
+    items:
+      $ref: '#/definitions/Cat'
+  Cat:
+    $ref: 'cat.yaml'
